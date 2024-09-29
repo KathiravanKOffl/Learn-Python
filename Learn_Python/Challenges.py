@@ -1,9 +1,3 @@
-def error(msg):
-    print(("-"*50)+(" ERROR ")+("-"*50))
-    print(("-"*107) + "\n")
-    print(msg)
-    print("\n"+("-"*107))
-
 def display_score(sco):
     if sco <= 40:
         print(f"\n\nYour beautiful score is {sco}")
@@ -14,7 +8,38 @@ def display_score(sco):
     elif sco == 100:
         print(f"\n\nCongratulations!!!\nYou got full marks....\nscore : {sco}")
 
+def error(msg):
+    print(("-"*50)+(" ERROR ")+("-"*50))
+    print(("-"*107) + "\n")
+    print(msg)
+    print("\n"+("-"*107))
+
 def challenge_1(func):
+    def OE_ans(num):
+        if num%2==0:
+            return "Even"
+        else:
+            return "Odd"
+        
+    tests = [45,67,3,12,78]
+
+    def check():
+        score = 0
+        try:
+            for i in tests:
+                print(f"Testing :{i}")
+                if OE_ans(i) == func(i):
+                    print(f"Test {i} passed !!!")
+                    score += 20
+                else:
+                    error(f"Expected : {OE_ans(i)}\nBut, Received : {func(i)}")
+                    break
+        finally:
+            display_score(score)
+
+    return check
+
+def challenge_2(func):
 
     def factorial_answer(n):
         if type(n) != int or n<0:
@@ -50,31 +75,6 @@ def challenge_1(func):
                     break
         except TypeError:
             error("Make Sure that all inputs, except int, must returns None!!!")
-        finally:
-            display_score(score)
-
-    return check
-
-def challenge_2(func):
-    def OE_ans(num):
-        if num%2==0:
-            return "Even"
-        else:
-            return "Odd"
-        
-    tests = [45,67,3,12,78]
-
-    def check():
-        score = 0
-        try:
-            for i in tests:
-                print(f"Testing :{i}")
-                if OE_ans(i) == func(i):
-                    print(f"Test {i} passed !!!")
-                    score += 20
-                else:
-                    error(f"Expected : {OE_ans(i)}\nBut, Received : {func(i)}")
-                    break
         finally:
             display_score(score)
 
