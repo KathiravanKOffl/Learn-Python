@@ -8,11 +8,11 @@ def display_score(sco):
     if sco <= 40:
         print(f"\n\nYour beautiful score is {sco}")
     elif sco <= 80:
-        print(f"\n\nHmm.. Good Try Madam!!!\nScore : {sco}")
+        print(f"\n\nHmm.. Good Try!!!\nScore : {sco}")
     elif sco < 100:
-        print(f"\n\nHmm.. Alomst Mudichuta!!!\nScore : {sco}")
+        print(f"\n\nHmm.. Alomst Done!!!\nScore : {sco}")
     elif sco == 100:
-        print(f"\n\nCongratulations Madam!!!\nFull marks vangitinga....\nscore : {sco}")
+        print(f"\n\nCongratulations!!!\nYou got full marks....\nscore : {sco}")
 
 def challenge_1(func):
 
@@ -28,7 +28,7 @@ def challenge_1(func):
         1:7,
         2:-8,
         3:4.8,
-        4:'podii venna',
+        4:'kathir',
         5:True
     }
 
